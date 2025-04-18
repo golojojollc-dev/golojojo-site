@@ -21,19 +21,20 @@
     }
 
     html, body {
+      height: auto;
+      min-height: 100vh;
+      width: 100%;
       font-family: Georgia, serif;
       background-color: var(--background);
-      height: 100%;
-      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 5vw;
     }
 
     .container {
       width: 100%;
       max-width: 960px;
-      height: 90vh;
       border-radius: 16px;
       overflow: hidden;
       background-color: white;
@@ -51,6 +52,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 45vh;
     }
 
     .llc-name {
@@ -83,6 +85,7 @@
       align-items: center;
       padding: 2rem 4rem;
       flex-wrap: wrap;
+      min-height: 40vh;
     }
 
     .apps-label {
@@ -116,11 +119,7 @@
     @media (max-width: 700px) {
       html, body {
         padding: 1.5rem;
-        height: auto;
-      }
-
-      .container {
-        height: auto;
+        align-items: stretch;
       }
 
       .bottom-half {
@@ -158,7 +157,6 @@
     </div>
   </div>
 
-  <!-- Obfuscated support email -->
   <script>
     const user = "app.support";
     const domain = "golojojo.com";
