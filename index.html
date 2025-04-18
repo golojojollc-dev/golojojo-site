@@ -23,17 +23,17 @@
     html, body {
       font-family: Georgia, serif;
       background-color: var(--background);
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 5vw;
     }
 
     .container {
       width: 100%;
-      height: 100%;
+      max-width: 960px;
+      height: 90vh;
       border-radius: 16px;
       overflow: hidden;
       background-color: white;
@@ -82,6 +82,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 2rem 4rem;
+      flex-wrap: wrap;
     }
 
     .apps-label {
@@ -96,9 +97,30 @@
       font-style: italic;
     }
 
+    .support-link {
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .support-link a {
+      color: var(--dark-green);
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    .support-link a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 700px) {
       html, body {
         padding: 1.5rem;
+        height: auto;
+      }
+
+      .container {
+        height: auto;
       }
 
       .bottom-half {
@@ -106,6 +128,7 @@
         justify-content: center;
         text-align: center;
         gap: 1.5rem;
+        padding: 2rem;
       }
 
       .apps-label, .apps-list {
@@ -131,8 +154,17 @@
     <div class="bottom-half">
       <div class="apps-label">Apps</div>
       <div class="apps-list">Coming soon</div>
+      <div class="support-link" id="support-email"></div>
     </div>
   </div>
+
+  <!-- Obfuscated support email -->
+  <script>
+    const user = "app.support";
+    const domain = "golojojo.com";
+    const email = `${user}@${domain}`;
+    const container = document.getElementById("support-email");
+    container.innerHTML = `<a href="mailto:${email}">Contact Support</a>`;
+  </script>
 </body>
 </html>
-
